@@ -76,7 +76,9 @@ class BookController extends Controller
             'stock' => ['required', 'integer', 'min:0'],
             'is_available' => ['required', 'boolean'],
             'synopsis' => ['nullable', 'string'],
-            'isbn' => ['nullable', 'string', 'max:255'],
+            'isbn' => ['nullable', 'string', 'max:255', 'regex:/^[0-9]+$/'],
+        ], [
+            'isbn.regex' => 'ISBN hanya boleh berisi angka.',
         ]);
     }
 }

@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 5,
                 'is_available' => true,
                 'synopsis' => 'Panduan dasar PHP untuk pemula.',
-                'isbn' => '978-602-1234-56-7',
+                'isbn' => '9786021234567',
             ],
             [
                 'title' => 'Senja di Kota Hujan',
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 0,
                 'is_available' => false,
                 'synopsis' => null,
-                'isbn' => '978-602-1234-56-8',
+                'isbn' => '9786021234568',
             ],
             [
                 'title' => 'Jejak Kerajaan Nusantara',
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 3,
                 'is_available' => true,
                 'synopsis' => 'Ringkasan sejarah kerajaan di Nusantara.',
-                'isbn' => '978-602-1234-56-9',
+                'isbn' => '9786021234569',
             ],
             [
                 'title' => 'Laravel untuk Aplikasi Modern',
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 8,
                 'is_available' => true,
                 'synopsis' => 'Membangun aplikasi web dengan Laravel.',
-                'isbn' => '978-602-1234-57-0',
+                'isbn' => '9786021234570',
             ],
             [
                 'title' => 'Langit di Ujung Jalan',
@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 2,
                 'is_available' => true,
                 'synopsis' => null,
-                'isbn' => '978-602-1234-57-1',
+                'isbn' => '9786021234571',
             ],
             [
                 'title' => 'Sejarah Indonesia Ringkas',
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 4,
                 'is_available' => true,
                 'synopsis' => 'Perjalanan sejarah Indonesia dari masa ke masa.',
-                'isbn' => '978-602-1234-57-2',
+                'isbn' => '9786021234572',
             ],
             [
                 'title' => 'Dasar-Dasar Jaringan Komputer',
@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 1,
                 'is_available' => true,
                 'synopsis' => 'Pengenalan konsep dan praktik jaringan komputer.',
-                'isbn' => '978-602-1234-57-3',
+                'isbn' => '9786021234573',
             ],
             [
                 'title' => 'Pulang Sebelum Senja',
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 0,
                 'is_available' => false,
                 'synopsis' => 'Kisah keluarga dan perjalanan menemukan rumah.',
-                'isbn' => '978-602-1234-57-4',
+                'isbn' => '9786021234574',
             ],
             [
                 'title' => 'Arsitektur Komputer',
@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 6,
                 'is_available' => true,
                 'synopsis' => 'Mengenal komponen dan cara kerja komputer.',
-                'isbn' => '978-602-1234-57-5',
+                'isbn' => '9786021234575',
             ],
             [
                 'title' => 'Kisah Para Pahlawan',
@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => 3,
                 'is_available' => true,
                 'synopsis' => 'Kisah tokoh-tokoh penting dalam sejarah bangsa.',
-                'isbn' => '978-602-1234-57-6',
+                'isbn' => '9786021234576',
             ],
         ] as $book) {
             Book::create($book);

@@ -5,7 +5,7 @@
 @section('content')
     <section class="hero">
         <div class="hero-copy">
-            <p class="eyebrow">Perpustakaan Senandika</p>
+            <p class="eyebrow">Perpustakaan Achmad safei</p>
             <h1>Temukan cerita yang terasa seperti rumah.</h1>
             <p>Jelajahi koleksi buku pilihan, dari kisah yang menghangatkan hingga wawasan yang membuka cakrawala.</p>
             <a class="btn btn-primary" href="{{ route('books.index') }}">Jelajahi koleksi <span aria-hidden="true">→</span></a>

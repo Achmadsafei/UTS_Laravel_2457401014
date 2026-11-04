@@ -36,7 +36,7 @@ class BookCrudTest extends TestCase
         $this->assertDatabaseHas('books', [
             'title' => 'Belajar PHP dari Nol',
             'category' => 'Teknologi',
-            'isbn' => '978-602-1234-56-7',
+            'isbn' => '9786021234567',
         ]);
     }
 
@@ -78,6 +78,25 @@ class BookCrudTest extends TestCase
             ->assertOk()
             ->assertSee('Buku berhasil ditambahkan ke koleksi.')
             ->assertSee('Buku Uji CRUD');
+    }
+
+    public function test_isbn_with_letters_shows_numeric_validation_error(): void
+    {
+        $response = $this->from(route('books.create'))
+            ->post(route('books.store'), array_merge($this->validBook(), [
+                'isbn' => '978602ABC4567',
+            ]));
+
+        $response->assertRedirect(route('books.create'))
+            ->assertSessionHasErrors([
+                'isbn' => 'ISBN hanya boleh berisi angka.',
+            ]);
+
+        $this->assertDatabaseCount('books', 0);
+
+        $this->get(route('books.create'))
+            ->assertOk()
+            ->assertSee('ISBN hanya boleh berisi angka.');
     }
 
     public function test_book_details_edit_form_and_update_work(): void
@@ -143,7 +162,7 @@ class BookCrudTest extends TestCase
             'stock' => 2,
             'is_available' => '1',
             'synopsis' => 'Sinopsis buku untuk pengujian.',
-            'isbn' => '978-602-1234-50-0',
+            'isbn' => '9786021234500',
         ];
     }
 }

@@ -1,10 +1,10 @@
-# Perpustakaan Senandika
+# Perpustakaan Achmad safei
 
 Aplikasi katalog perpustakaan dengan Laravel untuk mengelola buku melalui fitur tambah, daftar, detail, ubah, dan hapus.
 
 ## Identitas dan tema
 
-- Nama: isi `APP_STUDENT_NAME` di `.env` dengan nama lengkap mahasiswa.
+- Nama mahasiswa: Achmad safei (`APP_STUDENT_NAME` di `.env`).
 - NIM: 24574010140.
 - Tema: Perpustakaan — tabel `books`.
 - Database: `uts_24574010140`.
@@ -46,7 +46,7 @@ Buka `http://127.0.0.1:8000`. Untuk mengulang data contoh, gunakan `php artisan 
 | `stock` | integer | Jumlah stok |
 | `is_available` | boolean | Status ketersediaan |
 | `synopsis` | text, nullable | Sinopsis buku |
-| `isbn` | string, nullable | Kolom tambahan |
+| `isbn` | string, nullable | Kolom tambahan; hanya boleh berisi angka |
 | `id`, `created_at`, `updated_at` | otomatis | ID dan waktu pencatatan |
 
 ## Halaman untuk dokumentasi screenshot

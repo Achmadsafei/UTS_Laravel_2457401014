@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Perpustakaan Senandika') · {{ config('app.name', 'Senandika') }}</title>
+    <title>@yield('title', 'Perpustakaan Achmad safei') · {{ config('app.name', 'Achmad safei') }}</title>
     <style>
         :root {
             color-scheme: light;
@@ -141,7 +141,7 @@
         <div class="nav-wrap">
             <a class="brand" href="{{ route('home') }}">
                 <span class="brand-mark" aria-hidden="true">B</span>
-                <span>Senandika <span class="muted">/ Perpustakaan</span></span>
+                <span>Achmad safei <span class="muted">/ Perpustakaan</span></span>
             </a>
             <nav class="nav-links" aria-label="Navigasi utama">
                 <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Beranda</a>
@@ -156,7 +156,7 @@
 
     <footer class="site-footer">
         <div class="footer-wrap">
-            <span>© {{ date('Y') }} Senandika · Ruang untuk setiap cerita.</span>
+            <span>© {{ date('Y') }} Achmad safei · Ruang untuk setiap cerita.</span>
             <span class="footer-name">{{ config('student.name') }} <span class="muted">· NIM {{ config('student.nim') }}</span></span>
         </div>
     </footer>

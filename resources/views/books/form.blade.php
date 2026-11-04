@@ -78,7 +78,7 @@
 
                     <div class="field field-full">
                         <label for="isbn">ISBN <span class="muted">(opsional)</span></label>
-                        <input class="control {{ $errors->has('isbn') ? 'is-invalid' : '' }}" id="isbn" name="isbn" type="text" value="{{ old('isbn', $book->isbn) }}" maxlength="255" placeholder="Contoh: 978-602-1234-56-7" aria-invalid="{{ $errors->has('isbn') ? 'true' : 'false' }}">
+                        <input class="control {{ $errors->has('isbn') ? 'is-invalid' : '' }}" id="isbn" name="isbn" type="text" inputmode="numeric" value="{{ old('isbn', $book->isbn) }}" maxlength="255" placeholder="Contoh: 9786021234567" aria-invalid="{{ $errors->has('isbn') ? 'true' : 'false' }}">
                         @error('isbn') <p class="field-error">{{ $message }}</p> @enderror
                     </div>
 
