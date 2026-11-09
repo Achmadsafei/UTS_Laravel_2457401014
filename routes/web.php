@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\BookController;
-use App\Models\Book;
+use App\Http\Controllers\RoomController;
+use App\Models\Room;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
-        'bookCount' => Book::count(),
-        'availableCount' => Book::where('is_available', true)->count(),
+        'roomCount' => Room::count(),
+        'availableCount' => Room::where('is_available', true)->count(),
     ]);
 })->name('home');
 
-Route::get('/books/{book}/delete', [BookController::class, 'confirmDelete'])
-    ->name('books.confirm-delete');
+Route::get('/rooms/{room}/delete', [RoomController::class, 'confirmDelete'])
+    ->name('rooms.confirm-delete');
 
-Route::resource('books', BookController::class);
+Route::resource('rooms', RoomController::class);

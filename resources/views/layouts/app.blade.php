@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Perpustakaan Achmad safei') · {{ config('app.name', 'Achmad safei') }}</title>
+    <title>@yield('title', 'Kos Achmad Safei') · {{ config('app.name', 'Kos Achmad Safei') }}</title>
     <style>
         :root {
             color-scheme: light;
@@ -62,8 +62,8 @@
         th { padding: 14px 18px; background: #f5f4ee; color: #68746b; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
         td { padding: 16px 18px; border-top: 1px solid #efede6; vertical-align: middle; }
         tbody tr:hover { background: #fcfbf7; }
-        .book-title { font-weight: 750; }
-        .book-author { color: var(--muted); font-size: 13px; }
+        .room-title { font-weight: 750; }
+        .room-meta { max-width: 240px; overflow: hidden; color: var(--muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
         .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 99px; background: var(--green-soft); color: var(--green); font-size: 12px; font-weight: 750; white-space: nowrap; }
         .badge-muted { background: #f1f0eb; color: #68746b; }
         .badge-orange { background: var(--orange-soft); color: #9c542b; }
@@ -81,13 +81,15 @@
         .hero .btn-primary { background: #fffefa; color: var(--green); }
         .hero .btn-primary:hover { background: #f0eee6; }
         .hero-art { display: flex; min-height: 230px; align-items: center; justify-content: center; }
-        .book-stack { position: relative; width: 220px; height: 200px; transform: rotate(-7deg); }
-        .book { position: absolute; width: 166px; height: 205px; padding: 22px 18px; border: 1px solid rgb(255 255 255 / 30%); border-radius: 7px 13px 13px 7px; box-shadow: 8px 14px 25px rgb(10 25 17 / 23%); }
-        .book:before { position: absolute; top: 0; bottom: 0; left: 12px; border-left: 1px solid rgb(255 255 255 / 30%); content: ""; }
-        .book-one { top: 8px; left: 4px; background: #cb8051; transform: rotate(-10deg); }
-        .book-two { top: -1px; left: 45px; background: #d8c28c; color: #38503f; transform: rotate(7deg); }
-        .book-three { top: 18px; left: 78px; background: #78907a; transform: rotate(15deg); }
-        .book-lines { width: 68px; height: 50px; margin: 35px auto 0; border-top: 2px solid rgb(255 255 255 / 75%); border-bottom: 2px solid rgb(255 255 255 / 75%); opacity: .8; }
+        .room-illustration { position: relative; width: 270px; height: 200px; border: 8px solid #e8dfc7; border-radius: 12px; background: #f7f0df; box-shadow: 10px 15px 25px rgb(10 25 17 / 23%); }
+        .room-illustration:before { position: absolute; right: 0; bottom: 0; left: 0; height: 52px; background: #c8895d; content: ""; }
+        .room-window { position: absolute; top: 18px; right: 20px; width: 66px; height: 68px; border: 5px solid #fffefa; background: #b7d5cf; box-shadow: inset 30px 0 0 rgb(255 255 255 / 18%); }
+        .room-window:after { position: absolute; top: 0; bottom: 0; left: 27px; border-left: 3px solid #fffefa; content: ""; }
+        .room-bed { position: absolute; bottom: 40px; left: 22px; width: 150px; height: 62px; border-radius: 8px 8px 0 0; background: #73917a; box-shadow: 0 12px 0 #536e59; }
+        .room-bed:before { position: absolute; top: 9px; left: 10px; width: 42px; height: 24px; border-radius: 6px; background: #f5ead1; content: ""; }
+        .room-bed span { position: absolute; top: 0; right: 0; width: 92px; height: 49px; border-radius: 0 8px 0 0; background: #d8c28c; }
+        .room-plant { position: absolute; right: 21px; bottom: 48px; width: 24px; height: 32px; border-radius: 4px 4px 8px 8px; background: #cb8051; }
+        .room-plant:before { position: absolute; bottom: 24px; left: 4px; width: 17px; height: 24px; border-radius: 100% 0 100% 0; background: #78907a; content: ""; transform: rotate(-28deg); }
         .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
         .stat-card { padding: 20px 22px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); }
         .stat-label { display: block; margin-bottom: 3px; color: var(--muted); font-size: 13px; }
@@ -140,12 +142,12 @@
     <header class="site-header">
         <div class="nav-wrap">
             <a class="brand" href="{{ route('home') }}">
-                <span class="brand-mark" aria-hidden="true">B</span>
-                <span>Achmad safei <span class="muted">/ Perpustakaan</span></span>
+                <span class="brand-mark" aria-hidden="true">K</span>
+                <span>Kos Achmad Safei</span>
             </a>
             <nav class="nav-links" aria-label="Navigasi utama">
                 <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Beranda</a>
-                <a class="nav-link {{ request()->routeIs('books.*') ? 'active' : '' }}" href="{{ route('books.index') }}">Koleksi Buku</a>
+                <a class="nav-link {{ request()->routeIs('rooms.*') ? 'active' : '' }}" href="{{ route('rooms.index') }}">Daftar Kamar</a>
             </nav>
         </div>
     </header>
@@ -156,7 +158,7 @@
 
     <footer class="site-footer">
         <div class="footer-wrap">
-            <span>© {{ date('Y') }} Achmad safei · Ruang untuk setiap cerita.</span>
+            <span>© {{ date('Y') }} Kos Achmad Safei · Hunian nyaman, terasa seperti rumah.</span>
             <span class="footer-name">{{ config('student.name') }} <span class="muted">· NIM {{ config('student.nim') }}</span></span>
         </div>
     </footer>
